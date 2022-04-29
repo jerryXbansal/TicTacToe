@@ -1,0 +1,112 @@
+#include<stdio.h>
+int main(){
+	int chance,i,j,k,l,m,n,spin;
+	char zero='O',cross='X',p1[80],p2[80],ar1[20] = " - - - ",ar2[20] = "| | | |",ar3[20] = " - - - ",ar4[20] = "| | | |",ar5[20] = " - - - ",ar6[20] = "| | | |",ar7[20] = " - - - ";
+	printf("Enter player 1 name ");
+	gets(p1);
+	printf("Enter player 2 name ");
+	gets(p2);
+	printf("%s\n%s\n%s\n%s\n%s\n%s\n%s\n",ar1,ar2,ar3,ar4,ar5,ar6,ar7);
+	for(chance=0;chance<9;chance++)
+	{
+		if (chance%2==0)
+		{
+			printf("%s's turn \n Enter element no.to be replaced : ",p1);
+			scanf("%d",&i);
+			if(i==1)
+			{
+				ar2[1]=zero;
+			}
+			else if(i==2)
+			{
+				ar2[3]=zero;
+			}
+			else if(i==3)
+			{
+				ar2[5]=zero;
+			}
+			else if(i==4)
+			{
+				ar4[1]=zero;
+			}
+			else if(i==5)
+			{
+				ar4[3]=zero;
+			}
+			else if(i==6)
+			{
+				ar4[5]=zero;
+			}
+			else if(i==7)
+			{
+				ar6[1]=zero;
+			}
+			else if(i==8)
+			{
+				ar6[3]=zero;
+			}
+			else if(i==9)
+			{
+				ar6[5]=zero;
+			}
+			printf("%s\n%s\n%s\n%s\n%s\n%s\n%s\n",ar1,ar2,ar3,ar4,ar5,ar6,ar7);
+			if(ar2[1]==zero && ar2[1]==ar2[3] && ar2[3]==ar2[5] ||
+				 ar4[1]==zero && ar4[1]==ar4[3] && ar4[3]==ar4[5] ||
+				 ar6[1]==zero && ar6[1]==ar6[3] && ar6[3]==ar6[5] ||
+				 ar2[1]==zero && ar2[1]==ar4[1] && ar4[1]==ar6[1] ||
+				 ar2[3]==zero && ar2[3]==ar4[3] && ar4[3]==ar6[3] ||
+				 ar2[5]==zero && ar2[5]==ar4[5] && ar4[5]==ar6[5] ||
+				 ar2[1]==zero && ar2[1]==ar4[3] && ar4[3]==ar6[5] ||
+				 ar2[5]==zero && ar2[5]==ar4[3] && ar4[3]==ar6[1] )
+			{
+				printf("%s wins !",p1);
+				break;
+			}
+			else
+			{
+				continue;
+			}
+		}
+		else
+		{
+			printf("%s's turn \n Enter element no.to be replaced : ",p2);
+			scanf("%d",&i);
+			if(i==1)
+				ar2[1]=cross;
+			else if(i==2)
+				ar2[3]=cross;
+			else if(i==3)
+				ar2[5]=cross;
+			else if(i==4)
+				ar4[1]=cross;
+			else if(i==5)
+				ar4[3]=cross;
+			else if(i==6)
+				ar4[5]=cross;
+			else if(i==7)
+				ar6[1]=cross;
+			else if(i==8)
+				ar6[3]=cross;
+			else if(i==9)
+				ar6[5]=cross;
+			printf("%s\n%s\n%s\n%s\n%s\n%s\n%s\n",ar1,ar2,ar3,ar4,ar5,ar6,ar7);
+			if(ar2[1]==zero && ar2[1]==ar2[3] && ar2[3]==ar2[5] ||
+				 ar4[1]==zero && ar4[1]==ar4[3] && ar4[3]==ar4[5] ||
+				 ar6[1]==zero && ar6[1]==ar6[3] && ar6[3]==ar6[5] ||
+				 ar2[1]==zero && ar2[1]==ar4[1] && ar4[1]==ar6[1] ||
+				 ar2[3]==zero && ar2[3]==ar4[3] && ar4[3]==ar6[3] ||
+				 ar2[5]==zero && ar2[5]==ar4[5] && ar4[5]==ar6[5] ||
+				 ar2[1]==zero && ar2[1]==ar4[3] && ar4[3]==ar6[5] ||
+				 ar2[5]==zero && ar2[5]==ar4[3] && ar4[3]==ar6[1] )
+			{
+				printf("%s wins !",p2);
+				break;
+			}
+			else
+			{
+				continue;
+			}
+		}
+	}
+	return 0;
+}
